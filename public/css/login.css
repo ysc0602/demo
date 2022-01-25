@@ -1,0 +1,145 @@
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  background-color: #FFFBCC;
+  font: 400 0.35em/1.5 "Verdana", sans-serif;
+  margin: 0;
+  min-height: 100%;
+}
+
+.ttl {
+  position: relative;
+  margin: 0 auto;
+  width: 500px;
+}
+
+h1 {
+  margin: 0;
+  display: inline-block;
+  color: lightseagreen;
+  font-family: 'Righteous', serif;
+  font-size: 18em;
+  text-shadow: .03em .03em 0 #222;
+}
+
+h1:after {
+  content: attr(data-shadow);
+  position: absolute;
+  top: .06em;
+  left: .06em;
+  z-index: -1;
+  text-shadow: none;
+  background-image: linear-gradient(45deg, rgba(0, 0, 0, 0) 45%, #20b2aa 45%, #20b2aa 55%, rgba(0, 0, 0, 0) 0%);
+  background-size: .05em .05em;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shad-anim 30s linear infinite;
+}
+
+@keyframes shad-anim {
+  0% {
+    background-position: 0 0;
+  }
+  0% {
+    background-position: 100% -100%;
+  }
+}
+input {
+  border: 0;
+  color: inherit;
+  font: inherit;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  background-color: transparent;
+}
+
+.site__container {
+  flex: 1;
+  padding: 3rem 0;
+}
+
+.form input[type="password"], .form input[type="text"], .form input[type="submit"] {
+  width: 100%;
+}
+.form--login {
+  color: #333;
+}
+.form--login label,
+.form--login input[type="text"],
+.form--login input[type="password"],
+.form--login input[type="submit"] {
+  padding: 1rem;
+}
+.form--login input[type="text"], .form--login input[type="password"] {
+  border-bottom: 1px solid rgba(200, 200, 200, 0.5);
+  transition: all 0.2s ease;
+  z-index: 2;
+}
+.form--login input[type="text"]:focus, .form--login input[type="password"]:focus {
+  border-bottom-color: lightseagreen;
+}
+.form--login input[type="submit"] {
+  background-color: lightseagreen;
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+}
+.form--login input[type="submit"]:focus, .form--login input[type="submit"]:hover {
+  background-color: lightseagreen;
+}
+.form__field {
+  position: relative;
+  display: flex;
+  margin-bottom: 2.5rem;
+}
+.form__field input + label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #aaa;
+  font-weight: 300;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+.form__field input:focus + label {
+  color: lightseagreen;
+  transform: translateY(-30px);
+}
+.form__input {
+  flex: 1;
+}
+
+.align {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.text--center {
+  text-align: center;
+}
+
+.grid__container {
+  margin: 0 auto;
+  max-width: 20rem;
+  width: 90%;
+}
